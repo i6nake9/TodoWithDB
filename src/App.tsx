@@ -7,7 +7,7 @@ function App() {
 	const [todos, setTodos]: any[] = useState([]);
 
 	const deleteTodoHandler = (id: any) => {
-		setTodos(todos.filter((_: any, idx: any) => idx != id));
+		setTodos(todos.filter((_: any, idx: any) => idx !== id));
 	};
 
 	const addTodoHandler = (text: any) => {
