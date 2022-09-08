@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { TodoForm } from './components/Todos/TodoForm';
 import { TodoList } from './components/Todos/TodoList';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
 function App() {
-	const [todos, setTodos]: any[] = useState([]);
+	const [todos, setTodos]: any[] = useState([{}]);
 
 	const deleteTodoHandler = (id: any) => {
-		setTodos(todos.filter((_: any, idx: any) => idx != id));
+		setTodos(todos.filter((id: any): any => id !== id));
 	};
 
 	const addTodoHandler = (text: any) => {
-		setTodos([...todos, text]);
+		const newTodo = {
+			text: text,
+			isComleted: false,
+			id: uuidv4(),
+		};
+		setTodos([...todos, newTodo]);
 	};
 
 	return (
