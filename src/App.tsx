@@ -5,10 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 
 function App() {
-	const [todos, setTodos]: any[] = useState([{}]);
+	const [todos, setTodos]: any[] = useState([]);
 
 	const deleteTodoHandler = (id: any) => {
-		setTodos(todos.filter((id: any): any => id !== id));
+		setTodos(todos.filter((todo: any): any => todo.id !== id));
 	};
 
 	const addTodoHandler = (text: any) => {

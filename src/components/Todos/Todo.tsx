@@ -2,12 +2,12 @@ import React from 'react';
 import { RiTodoFill } from 'react-icons/ri';
 import styles from './Todo.module.css';
 
-export const Todo = (...todo: any) => {
+export const Todo = ({ todo, deleteTodo, id }: any) => {
 	return (
 		<div
 			className={styles.todo}
 			onDoubleClick={() => {
-				todo.deleteTodo(todo.id);
+				deleteTodo(todo.id);
 			}}
 		>
 			<RiTodoFill className={styles.todoIcon} />
